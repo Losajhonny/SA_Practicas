@@ -51,27 +51,27 @@ Python app.py
 
 Después de iniciar la app se mostrará un pequeño menu en donde puede listar usuarios, crear usuario, actualizar usuario, eliminar usuario y obtener un usuario en especifico y ademas de poder salir del menu.
 
-![Menu](doc/menu.png)
+![Menu](../Doc/menu.png)
 
 La opción 1. Muestra todos los usuarios registrados.
 
-![Opcion1](doc/opcion1.png)
+![Opcion1](../Doc/opcion1.png)
 
 La opción 2. Crea un usuario con los paramateros name, gander, email y status. Devuelve un objeto de respuesta.
 
-![Opcion2](doc/opcion2.png)
+![Opcion2](../Doc/opcion2.png)
 
 La opción 3. Actualiza todos los campos del usuario con los mismos parametros. Devuelve un objeto de respuesta.
 
-![Opcion3](doc/opcion3.png)
+![Opcion3](../Doc/opcion3.png)
 
 La opción 4. Elimina un usuario dando como parametro su identificador. Devuelve un objeto de respuesta.
 
-![Opcion4](doc/opcion4.png)
+![Opcion4](../Doc/opcion4.png)
 
 La opcion 5. Devuelve los datos de un usuario registrado dando como parametro su identificador.
 
-![Opcion5](doc/opcion5.png)
+![Opcion5](../Doc/opcion5.png)
 
 Y la opcion 6 es para salir del menu dando por finalizado el cliente.
 
