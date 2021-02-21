@@ -182,3 +182,7 @@ Cada microservicio se le coloco un endpoint para mostrar todos los pedidos que t
 *   /client/order/list
 *   /restaurant/order/list
 *   /delivery-man/order/list
+
+### Link del video - Presentacion de funcionalidades
+
+[https://youtu.be/70FTGzyApl8](PruebasFuncionalidad)
