@@ -185,4 +185,4 @@ Cada microservicio se le coloco un endpoint para mostrar todos los pedidos que t
 
 ### Link del video - Presentacion de funcionalidades
 
-[https://youtu.be/70FTGzyApl8](PruebasFuncionalidad)
+https://youtu.be/70FTGzyApl8
