@@ -17,7 +17,7 @@ La ubicacion del codigo fuente de cada servidor es directamente desde su carpeta
 
 **Ejemplo ubicacion**
 
-![src](../doc/p3mc.png)
+![ejemplo](../doc/p3mc.png)
 
 ## Cliente
 
