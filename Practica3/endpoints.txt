@@ -1,0 +1,17 @@
+client - http://localhost:3001
+/client/order/list
+/client/request-order/:idrest/:idmenu/:dir/:phone
+/client/state-restaurant/:idpedido
+/client/state-delivery/:idpedido
+
+restaurant - http://localhost:3002
+/restaurant/order/list
+/restaurant/receive-order/:idrest/:idmenu/:dir/:phone
+/restaurant/state-order/:idpedido
+/restaurant/report-delivery-man/:idpedido
+
+delivery-man - http://localhost:3003
+/delivery-man/order/list
+/delivery-man/receive-order/:idrest/:idmenu/:dir/:phone
+/delivery-man/state-order/:idpedido
+/delivery-man/report-delivery/:idpedido
