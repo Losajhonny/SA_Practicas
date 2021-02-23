@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-
+const fetch = require('node-fetch');
 const app = express();
 
 /**
@@ -15,8 +15,8 @@ const pedidos = [];
  * settings
  */
 app.set('port', 3001);
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json({ extended: false }));
 
 /**
  * middleware
@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 /**
  * utilizado para listar ordenes
  */
-app.get('/client/order/list', (req, res) => {
+app.get('/client/order-list', (req, res) => {
     return res.status(200).send({ data: pedidos });
 });
 
@@ -60,15 +60,13 @@ app.get('/client/state-restaurant/:idpedido', (req, res) => {
 
     let pedido = null;
     let state = 'none';
-    
-    if (idpedido < pedidos.length)
-    {
+
+    if (idpedido < pedidos.length) {
         pedido = pedidos[idpedido];
-    
+
         const random = Math.round(Math.floor(Math.random() * 3));
-        
-        switch (random)
-        {
+
+        switch (random) {
             case 0:
                 state = 'wait';
                 break;
@@ -92,15 +90,13 @@ app.get('/client/state-delivery/:idpedido', (req, res) => {
 
     let pedido = null;
     let state = 'none';
-    
-    if (idpedido < pedidos.length)
-    {
+
+    if (idpedido < pedidos.length) {
         pedido = pedidos[idpedido];
-    
+
         const random = Math.round(Math.floor(Math.random() * 3));
-        
-        switch (random)
-        {
+
+        switch (random) {
             case 0:
                 state = 'wait';
                 break;
@@ -117,8 +113,54 @@ app.get('/client/state-delivery/:idpedido', (req, res) => {
 });
 
 /**
+ * registrar servicio a esb
+ */
+async function register() {
+    const service = {
+        name: "client",
+        host: "localhost",
+        port: "3001",
+        endpoints: [
+            {
+                method: 'GET',
+                endpoint: '/order-list',
+                parameters: []
+            },
+            {
+                method: 'GET',
+                endpoint: '/request-order',
+                parameters: ['idrest', 'idmenu', 'dir', 'phone']
+            },
+            {
+                method: 'GET',
+                endpoint: '/state-restaurant',
+                parameters: ['idpedido']
+            },
+            {
+                method: 'GET',
+                endpoint: '/state-delivery',
+                parameters: ['idpedido']
+            }
+        ]
+    }
+
+    await fetch('http://localhost:3000/api/esb/add-service', {
+        method: 'post',
+        body: JSON.stringify(service),
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
+    })
+    .then(res => {
+        return res.json();
+    })
+    .then(json => {
+        console.log("registered service");
+    });
+}
+
+/**
  * inicio del servidor
  */
 app.listen(app.get('port'), () => {
     console.log('server on port', app.get('port'));
+    register();
 });

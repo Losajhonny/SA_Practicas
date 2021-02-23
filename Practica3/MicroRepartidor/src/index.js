@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-
+const fetch = require('node-fetch');
 const app = express();
 
 /**
@@ -102,8 +102,54 @@ app.get('/delivery-man/report-delivery/:idpedido', (req, res) => {
 });
 
 /**
+ * registrar servicio a esb
+ */
+async function register() {
+    const service = {
+        name: "delivery-man",
+        host: "localhost",
+        port: "3003",
+        endpoints: [
+            {
+                method: 'GET',
+                endpoint: '/order/list',
+                parameters: []
+            },
+            {
+                method: 'GET',
+                endpoint: '/receive-order',
+                parameters: ['idrest', 'idmenu', 'dir', 'phone']
+            },
+            {
+                method: 'GET',
+                endpoint: '/state-order',
+                parameters: ['idpedido']
+            },
+            {
+                method: 'GET',
+                endpoint: '/report-delivery',
+                parameters: ['idpedido']
+            }
+        ]
+    }
+
+    await fetch('http://localhost:3000/api/esb/add-service', {
+        method: 'post',
+        body: JSON.stringify(service),
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
+    })
+    .then(res => {
+        return res.json();
+    })
+    .then(json => {
+        console.log("registered service");
+    });
+}
+
+/**
  * inicio del servidor
  */
 app.listen(app.get('port'), () => {
     console.log('server on port', app.get('port'));
+    register();
 });
