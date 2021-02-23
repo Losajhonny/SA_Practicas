@@ -52,7 +52,7 @@ Para validar que el servicio se ha registrado correctamente, puede hacer uso del
 /api/esb/list-service
 ````
 
-Ahora con las modificaciones que se hicieron se debe acceder a todos los endpoints de la siguiente manera:
+Ahora con las modificaciones que se hicieron se debe acceder a todos los endpoints de los microservicios de la siguiente manera:
 
 ````plaintext
 ESB - http://localhost:3000
