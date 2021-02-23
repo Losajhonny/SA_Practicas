@@ -28,7 +28,7 @@ app.use((req, res, next) => {
 /**
  * utilizado para listar ordenes
  */
-app.get('/delivery-man/order/list', (req, res) => {
+app.get('/delivery-man/order-list', (req, res) => {
     return res.status(200).send({ data: pedidos });
 });
 
@@ -112,7 +112,7 @@ async function register() {
         endpoints: [
             {
                 method: 'GET',
-                endpoint: '/order/list',
+                endpoint: '/order-list',
                 parameters: []
             },
             {
