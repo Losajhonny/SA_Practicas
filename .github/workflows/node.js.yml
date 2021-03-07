@@ -16,8 +16,8 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+        node-version: [10.x, 11.x, 12.x]
+        # See supported Node.jgus release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v2
@@ -25,8 +25,5 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: ls
-    - run: cd Practica4
-    - run: ls
     - run: npm ci
     - run: npm run build --if-present

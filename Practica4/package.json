@@ -1,11 +1,11 @@
 {
   "name": "ebs",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.js",
-    "build": "npm install"
+    "build": "octojs pack --version 0.1.0 --gitignore --dependencies prod"
   },
   "author": "Jhonatan",
   "license": "ISC",
@@ -15,5 +15,8 @@
     "express": "^4.17.1",
     "node-fetch": "^2.6.1"
   },
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
 }
