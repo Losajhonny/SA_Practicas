@@ -22,7 +22,8 @@ jobs:
 
       - name: Add artifacts
         run: |
-          mv /Practica4 downloads
+          ls
+          mv ./Practica4 downloads
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
