@@ -21,9 +21,8 @@ jobs:
         run: mkdir downloads
 
       - name: Add artifacts
-        working-directory: ./Practica4
         run: |
-          mv . ../downloads
+          mv ./Practica4 downloads
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
