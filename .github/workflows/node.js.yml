@@ -17,19 +17,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Create a temporary artifact
-        run: mkdir downloads
+      #- name: Create a temporary artifact
+        #run: mkdir downloads
 
-      - name: Add artifacts
+      - name: artifacts 1
         working-directory: ./Practica4
         run: |
           ls -a
+          
+      - name:  artifacts 2
+        run: |
+          ls -a
 
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: practica-artifact
-          path: downloads
+      #- name: Upload artifacts
+        #uses: actions/upload-artifact@v2
+        #with:
+          #name: practica-artifact
+          #path: downloads
 
       #- name: Checkout repository
       #  uses: actions/checkout@v2
