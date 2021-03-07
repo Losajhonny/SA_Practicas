@@ -16,17 +16,25 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Create a temporary artifact
+        run: mkdir dist
+
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: npm install
+
+      - name: Install dependencies
         run: |
           npm ci
           npm install @octopusdeploy/octojs
-      - name: npm build
+
+      - name: Build
         run:  npm run build --if-present
+
+      - name: Move zip
+        run: mv ebs.0.1.0.zip dist/ebs.0.1.0.zip
+
       - name: Archive production artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: practica
-          path: |
-            ./dist/ebs.0.1.0.zip
+          name: practica-artifact
+          path: dist
