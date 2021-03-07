@@ -19,7 +19,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: npm install, build
-        working-directory: ./Practica4
+        #working-directory: ./Practica4
         run: |
           npm ci
           npm install @octopusdeploy/octojs
