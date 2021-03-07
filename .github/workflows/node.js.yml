@@ -21,7 +21,9 @@ jobs:
         #run: mkdir downloads
 
       - name: artifacts 1
-        run: dir
+        run: |
+          cd Practica4
+          npm ci
           
       - name:  artifacts 2
         run: ls
