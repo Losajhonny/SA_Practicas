@@ -18,15 +18,15 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: npm install, build
-        #working-directory: ./Practica4
+      - name: npm install
         run: |
           npm ci
           npm install @octopusdeploy/octojs
-          npm run build --if-present
+      - name: npm build
+        run:  npm run build --if-present
       - name: Archive production artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: dist-without-markdown
+          name: artifact
           path: |
-            ./dist
+            ./src
