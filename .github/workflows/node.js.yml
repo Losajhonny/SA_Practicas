@@ -48,4 +48,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: practica-artifact
-          path: ./dist
+          path: downloads
