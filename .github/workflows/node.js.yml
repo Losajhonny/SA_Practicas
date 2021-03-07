@@ -42,7 +42,7 @@ jobs:
           mkdir downloads
 
       - name: Move
-        run: mv . ./dist
+        run: mv /home/runner/work/SA_Practicas/SA_Practicas/Practica4/dist/ downloads
 
       - name: Archive production artifacts
         uses: actions/upload-artifact@v2
