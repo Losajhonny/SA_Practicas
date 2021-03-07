@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.js",
-    "build": "octojs pack --version 0.1.0 --gitignore --dependencies prod"
+    "build": "octojs pack -O ./dist --format zip"
   },
   "author": "Jhonatan",
   "license": "ISC",
