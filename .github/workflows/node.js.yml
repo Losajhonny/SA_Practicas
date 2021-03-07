@@ -18,13 +18,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: lista 1
-        run: ls
+        run: dir
 
       - name: Create a temporary artifact
         run: mkdir downloads
 
       - name: lista 1
-        run: ls
+        run: dir
 
       - name: Add artifacts
         run: |
@@ -32,7 +32,7 @@ jobs:
           mv ./Practica4 downloads
 
       - name: lista 1
-        run: ls
+        run: dir
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
