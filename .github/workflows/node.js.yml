@@ -19,22 +19,34 @@ jobs:
       - name: Create a temporary artifact
         run: mkdir downloads
 
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Install dependencies
+      - name: Add artifacts
         run: |
-          npm ci
-          npm install @octopusdeploy/octojs
+          cd downloads
+          echo 'alpha' > alpha.html
+          cd ..
 
-      - name: Build
-        run:  npm run build --if-present
-
-      - name: Move zip
-        run: mv ebs.0.1.0.zip downloads/ebs.0.1.0.zip
-
-      - name: Archive production artifacts
+      - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
           name: practica-artifact
           path: downloads
+
+      #- name: Checkout repository
+      #  uses: actions/checkout@v2
+
+      #- name: Install dependencies
+      #  run: |
+      #    npm ci
+      #    npm install @octopusdeploy/octojs
+
+      #- name: Build
+      #  run:  npm run build --if-present
+
+      #- name: Move zip
+      #  run: mv ebs.0.1.0.zip downloads/ebs.0.1.0.zip
+
+      #- name: Archive production artifacts
+      #  uses: actions/upload-artifact@v2
+      #  with:
+      #    name: practica-artifact
+      #    path: downloads
