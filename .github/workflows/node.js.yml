@@ -23,7 +23,7 @@ jobs:
       - name: Add artifacts
         working-directory: ./Practica4
         run: |
-          mv . downloads
+          ls -a
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
