@@ -12,7 +12,7 @@ on:
 #defaults:
   #run:
     #working-directory: ./Practica4
-    
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,10 +21,9 @@ jobs:
         run: mkdir downloads
 
       - name: Add artifacts
+        working-directory: ./Practica4
         run: |
-          cd downloads
-          echo 'alpha' > alpha.html
-          cd ..
+          mv . ../downloads
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
