@@ -50,4 +50,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: practica-artifact
-          path: dist
+          path: dist/ebs0.2.0.zip
