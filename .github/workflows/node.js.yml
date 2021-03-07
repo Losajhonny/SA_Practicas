@@ -50,4 +50,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: practica-artifact
-          path: /home/runner/work/SA_Practicas/SA_Practicas/Practica4/
+          path: /home/runner/work/SA_Practicas/SA_Practicas/Practica4/dist
