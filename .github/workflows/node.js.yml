@@ -37,6 +37,10 @@ jobs:
       - name: Build
         run:  npm run build --if-present
 
+      - name: otro
+        run: |
+          mkdir downloads
+
       - name: Move
         run: mv . ./dist
 
