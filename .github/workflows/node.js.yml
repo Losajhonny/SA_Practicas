@@ -44,7 +44,7 @@ jobs:
       #- name: Move
       #  run: mv /home/runner/work/SA_Practicas/SA_Practicas/Practica4 downloads
       - name: descomprimir
-        run: unzip ./dist/ebs0.1.0
+        run: unzip ./dist/ebs0.1.0.zip
 
       - name: Archive production artifacts
         uses: actions/upload-artifact@v2
