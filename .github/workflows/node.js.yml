@@ -26,8 +26,8 @@ jobs:
           #name: practica-artifact
           #path: downloads
 
-      #- name: Checkout repository
-      #  uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
       - name: Install dependencies
         run: |
