@@ -3,14 +3,18 @@ pipeline {
 
     stages {
         stage ("build") {
-            dir("Practica4") {
-                sh "npm install"
+            steps {
+                    dir("Practica4") {
+                    sh "npm install"
+                }
             }
         }
 
         stage ("deploy") {
-            dir("Practica4") {
-                sh "npm start"
+            steps {
+                    dir("Practica4") {
+                    sh "npm start"
+                }
             }
         }
     }
