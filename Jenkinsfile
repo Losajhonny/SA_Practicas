@@ -2,12 +2,6 @@ pipeline {
     agent { label "master" }
 
     stages {
-        stage ("prepare") {
-            steps {
-                sh "sudo apt install nodejs"
-                sh "sudo apt install npm"
-            }
-        }
         stage ("build") {
             steps {
                     dir("Practica4") {
