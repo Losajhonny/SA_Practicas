@@ -23,15 +23,10 @@ pipeline {
                 }
             }
         }
-        stage ("Artefact") {
-            steps {
-                sh "copy . ./build"
-            }
-        }
     }
     post {
         always {
-            archiveArtifacts artifacts: "./build", onlyIfSuccessful: true
+            archiveArtifacts artifacts: "./", onlyIfSuccessful: true
         }
     }
 }
