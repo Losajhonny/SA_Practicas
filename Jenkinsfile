@@ -5,7 +5,7 @@ pipeline {
         stage ("build") {
             steps {
                 dir("Practica4") {
-                    sh "echo install"
+                    sh "npm install"
                 }
             }
         }
@@ -13,7 +13,7 @@ pipeline {
         stage ("deploy") {
             steps {
                 dir("Practica4") {
-                    sh "echo start"
+                    sh "npm start"
                 }
             }
         }
