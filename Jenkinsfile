@@ -26,7 +26,7 @@ pipeline {
     }
     post {
         always {
-            archiveArtifacts artifacts: "./", onlyIfSuccessful: true
+            archiveArtifacts artifacts: "Practica4", onlyIfSuccessful: true
         }
     }
 }
