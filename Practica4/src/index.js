@@ -2,6 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
 const app = express();
+const Servicio = require('../src/service');
+const addService = Servicio.addService;
+const existService = Servicio.existService;
+const existEnpoint = Servicio.existEnpoint;
+const getServices = Servicio.getServices;
 
 /**
  * settings
@@ -24,7 +29,7 @@ app.use((req, res, next) => {
  * lista todos los servicios
  */
 app.get('/api/esb/list-service', (req, res) => {
-    return res.status(200).send({ services: services });
+    return res.status(200).send({ services: getServices() });
 });
 
 /**
@@ -32,7 +37,8 @@ app.get('/api/esb/list-service', (req, res) => {
  */
 app.post('/api/esb/add-service', (req, res) => {
     const service = req.body;
-    services.push(service);
+    //services.push(service);
+    addService(service);
     return res.status(200).send({ message: 'saved' });
     
 });
@@ -43,6 +49,7 @@ app.post('/api/esb/add-service', (req, res) => {
  * @param {*} method
  * @param {*} endp 
  */
+/*
 function existEnpoint(endpoints, method, endp) {
     for (let i = 0; i < endpoints.length; i++) {
         const endpoint = endpoints[i];
@@ -52,11 +59,13 @@ function existEnpoint(endpoints, method, endp) {
     }
     return false;
 }
+*/
 
 /**
  * indica si el servicio existe
  * @param {*} name 
  */
+/*
 function existService(name) {
     for (let i = 0; i < services.length; i++) {
         const service = services[i];
@@ -66,6 +75,7 @@ function existService(name) {
     }
     return false;
 }
+*/
 
 /**
  * accesos de los servicios
