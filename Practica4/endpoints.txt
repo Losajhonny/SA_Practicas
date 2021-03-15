@@ -18,3 +18,12 @@ delivery-man - http://localhost:3003
 /api/esb/delivery-man/receive-order/:idrest/:idmenu/:dir/:phone
 /api/esb/delivery-man/state-order/:idpedido
 /api/esb/delivery-man/report-delivery/:idpedido
+
+
+configuraciones sonar scanner
+
+nombretoken = practicas
+token = practicas: de7d24339bd38a964c859ec3039f061ae9924864
+sonar-scanner.bat -D"sonar.projectKey=sa-practicas" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.login=de7d24339bd38a964c859ec3039f061ae9924864" -D"sonar.coverageReportPaths=C:\Users\Jhonny\Desktop\Git2021\SA_Practicas\Practica4\coverage" -D"sonar.tests=C:\Users\Jhonny\Desktop\Git2021\SA_Practicas\Practica4\test\" -D"sonar.language=js" -D"sonar.sourceEncoding=UTF-8"
+sonar-scanner.bat -D"sonar.projectKey=sa-practicas" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.login=de7d24339bd38a964c859ec3039f061ae9924864" -D"sonar.sourceEncoding=UTF-8" -D"sonar.sources=src" -D"sonar.exclusions=**/*.test.ts" -D"sonar.tests=test" -D"sonar.test.inclusions=**/*.test.js"
+sonar-scanner.bat -D"sonar.projectKey=sa-practicas" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.login=de7d24339bd38a964c859ec3039f061ae9924864" -D"sonar.sourceEncoding=UTF-8" -D"sonar.sources=src" -D"sonar.exclusions=src/test/**/*.test.js" -D"sonar.tests=src/test" -D"sonar.test.inclusions=src/test/**/*.test.js" -D"sonar.javascript.lcov.reportPaths=coverage/lcov.info"

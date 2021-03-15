@@ -3,14 +3,19 @@
   "version": "0.1.0",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/**/*.test.js --timeout 100000 --exit",
     "start": "node src/index.js",
     "build": "octojs pack -O ./dist",
-    "coverage": "nyc --reporter=html --reporter=text mocha test/**/*.test.js --exit",
-    "test-coverage": "nyc --check-coverage --lines 90"
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "test-other": "mocha src/test/**/*.test.js --timeout 100000 --exit",
+    "test-coverage--s": "nyc --check-coverage --lines 90",
+    "coverage--s": "nyc --reporter=lcov --reporter=text-lcov --reporter=html --reporter=text mocha src/test/**/*.test.js --exit"
   },
   "author": "Jhonatan",
   "license": "ISC",
+  "jest": {
+    "collectCoverage": true
+  },
   "dependencies": {
     "body-parser": "^1.19.0",
     "chai": "^4.3.4",
@@ -21,6 +26,8 @@
   "description": "",
   "devDependencies": {
     "gulp": "^4.0.2",
+    "jest": "^26.6.3",
+    "jest-sonar-reporter": "^2.0.0",
     "mocha": "^8.3.2",
     "nyc": "^15.1.0"
   }

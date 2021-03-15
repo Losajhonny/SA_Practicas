@@ -1,4 +1,4 @@
-const Servicio = require('../src/service');
+const Servicio = require('../service');
 const addService = Servicio.addService;
 const existService = Servicio.existService;
 const existEnpoint = Servicio.existEnpoint;
