@@ -23,6 +23,13 @@ pipeline {
                 }
             }
         }
+        stage ("artifact") {
+            steps {
+                dir("Practica4") {
+                    sh "zip zipFile: art.zip archive:trhe dir:."
+                }
+            }
+        }
     }
     post {
         always {
