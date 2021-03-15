@@ -5,7 +5,8 @@
   "scripts": {
     "test": "mocha test/**/*.test.js --timeout 100000 --exit",
     "start": "node src/index.js",
-    "build": "octojs pack -O ./dist"
+    "build": "octojs pack -O ./dist",
+    "coverage": "nyc --reporter=html --reporter=text mocha test/**/*.test.js --exit"
   },
   "author": "Jhonatan",
   "license": "ISC",
@@ -19,6 +20,7 @@
   "description": "",
   "devDependencies": {
     "gulp": "^4.0.2",
-    "mocha": "^8.3.2"
+    "mocha": "^8.3.2",
+    "nyc": "^15.1.0"
   }
 }
