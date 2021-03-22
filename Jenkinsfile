@@ -1,4 +1,5 @@
 pipeline {
+    checkout scm
     agent any
     tools { nodejs "node" }
     stages {
@@ -12,14 +13,7 @@ pipeline {
         stage ("test") {
             steps {
                 dir("Practica4") {
-                    sh "echo test"
-                }
-            }
-        }
-        stage ("deploy") {
-            steps {
-                dir("Practica4") {
-                    sh "echo deploy"
+                    sh "npm test"
                 }
             }
         }
