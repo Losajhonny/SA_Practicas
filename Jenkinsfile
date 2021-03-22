@@ -25,6 +25,7 @@ pipeline {
                 }
             }
         }
+        // token sonar 3c6bcf125bd3beba7eb392a822f1f0f088a9b7db
         stage ("Quality gate") {
             steps {
                 waitForQualityGate abortPipeline: true
