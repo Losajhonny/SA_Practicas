@@ -19,7 +19,7 @@ pipeline {
         }
         stage ("SonarQube analysis") {
             environment {
-                scannerHome = tool "Sonar"
+                scannerHome = tool "SonarQubeScanner"
             }
             steps {
                 withSonarQubeEnv("Sonarqube") {
@@ -28,6 +28,7 @@ pipeline {
             }
         }
         // token sonar 3c6bcf125bd3beba7eb392a822f1f0f088a9b7db
+        // esto estoy usando bc3005c8d5958527427a2741a46923b9a9ccb346
         stage ("Quality gate") {
             steps {
                 waitForQualityGate abortPipeline: true
