@@ -1,5 +1,5 @@
 pipeline {
-    checkout scm
+    
     agent any
     tools { nodejs "node" }
     stages {
@@ -17,6 +17,7 @@ pipeline {
                 }
             }
         }
+        /*
         stage ("artifact") {
             steps {
                 dir("Practica4") {
@@ -24,10 +25,13 @@ pipeline {
                 }
             }
         }
+        */
     }
+    /*
     post {
         always {
             archiveArtifacts artifacts: "Practica4", onlyIfSuccessful: true
         }
     }
+    */
 }
