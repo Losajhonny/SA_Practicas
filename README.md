@@ -13,3 +13,4 @@ En este repositorio se guarda las practicas que se realizaran en el laboratorio 
 *   [Practica 5](Practica5/README.md)
 *   [Practica 6](Practica6/README.md)
 *   [Practica 7](Practica7/README.md)
+*   [Practica 8](Practica8/README.md)
