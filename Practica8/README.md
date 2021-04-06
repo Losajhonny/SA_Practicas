@@ -66,3 +66,7 @@ services:
  ````
  docker-compose up
  ````
+
+## Link del video
+
+https://www.youtube.com/watch?v=7KsYYC9X-Zs
